@@ -140,3 +140,11 @@ nav a.router-link-active {
 * { 
   font-family: Arial, Helvetica, sans-serif; 
 }
+
+.finished {
+  text-decoration: line-through;
+}
+
+li {
+  list-style: none;
+}

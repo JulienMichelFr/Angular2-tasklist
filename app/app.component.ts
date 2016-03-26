@@ -1,11 +1,13 @@
 import {Component} from 'angular2/core';
-import {NgForm} from 'angular2/common';
+import {NgForm, NgClass} from 'angular2/common';
+
 
 @Component({
     selector: 'my-app',
     templateUrl: 'app/app.component.html'
 })
 export class AppComponent {
+
     tasks = [
         {
             id: 1,
@@ -32,6 +34,5 @@ export class AppComponent {
             title: 'Task5',
             done: false
         },
-
-    ]
+    ];
 }
