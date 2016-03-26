@@ -2,7 +2,8 @@
 <div>
     <ul>
         <li *ngFor="#task of tasks">
-            [<span *ngIf="task.done">X</span><span *ngIf="!task.done">&nbsp;</span>] <span>{{task.id}} - {{task.title}}</span>
+            <label>{{task.title}}</label>
+            <input [(ngModel)]="task.done" type="checkbox" id="{{task.id}}">
         </li>
     </ul>
 </div>

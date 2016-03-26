@@ -1,4 +1,5 @@
 import {Component} from 'angular2/core';
+import {NgForm} from 'angular2/common';
 
 @Component({
     selector: 'my-app',
@@ -9,7 +10,7 @@ export class AppComponent {
         {
             id: 1,
             title: 'Task1',
-            done: false
+            done: true
         },
         {
             id: 2,
