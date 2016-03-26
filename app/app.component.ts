@@ -47,4 +47,11 @@ export class AppComponent {
         this.tasks.push(this.model);
         this.model = new Task('', false)
     }
+
+    remove(task:Task) {
+        let index = this.tasks.indexOf(task)
+        if (index > -1) {
+            this.tasks.splice(index, 1)
+        }
+    }
 }

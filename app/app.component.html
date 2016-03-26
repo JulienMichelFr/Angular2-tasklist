@@ -3,7 +3,11 @@
     <ul>
         <li *ngFor="#task of tasks">
             <input [(ngModel)]="task.done" type="checkbox" class="checkbox">
-            <label><span [ngClass]="{finished: task.done}"></span>{{task.name}}</label>
+            <label>
+                <span [ngClass]="{finished: task.done}">
+                </span>{{task.name}}
+            </label>
+            <i *ngIf="task.done" (click)="remove(task)" class="mdi mdi-delete icon"></i>
         </li>
     </ul>
     <form *ngIf="active" (ngSubmit)="onSubmit()" #taskForm="ngForm">

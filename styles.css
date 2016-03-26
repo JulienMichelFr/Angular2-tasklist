@@ -8,7 +8,9 @@ li {
   list-style: none;
 }
 
-
+i.icon {
+  margin-left: 1em;
+}
 
 /* Task line-through animation */
 
