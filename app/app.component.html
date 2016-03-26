@@ -5,13 +5,15 @@
             <input [(ngModel)]="task.done" type="checkbox" class="checkbox">
             <label><span [ngClass]="{finished: task.done}"></span>{{task.name}}</label>
         </li>
-        <li>
-            <form *ngIf="active" (ngSubmit)="onSubmit()" #taskForm="ngForm">
-                <label for="name">Text</label>
-                <input type="text" required id="name"
-                       [(ngModel)]="model.name">
-                <button type="submit" [disabled]="!taskForm.form.valid">Add</button>
-            </form>
-        </li>
     </ul>
+    <form *ngIf="active" (ngSubmit)="onSubmit()" #taskForm="ngForm">
+        <div class="group">
+            <input class="material-input-text" type="text" required id="name"
+                   [(ngModel)]="model.name">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label class="material-input-label">Task</label>
+        </div>
+        <button type="submit" [disabled]="!taskForm.form.valid">Add</button>
+    </form>
 </div>

@@ -1,6 +1,5 @@
 import {Component} from 'angular2/core';
 import {FORM_DIRECTIVES, NgClass} from 'angular2/common';
-import {TaskFormComponent} from "./components/task/taskform.component";
 import {Task} from "./models/task";
 
 
