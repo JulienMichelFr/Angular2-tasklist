@@ -1,38 +1,51 @@
 import {Component} from 'angular2/core';
-import {NgForm, NgClass} from 'angular2/common';
+import {FORM_DIRECTIVES, NgClass} from 'angular2/common';
+import {TaskFormComponent} from "./components/task/taskform.component";
+import {Task} from "./models/task";
 
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app/app.component.html'
+    templateUrl: 'app/app.component.html',
+    directives: [FORM_DIRECTIVES]
 })
 export class AppComponent {
 
     tasks = [
         {
             id: 1,
-            title: 'Task1',
+            name: 'Task1',
             done: true
         },
         {
             id: 2,
-            title: 'Task2',
+            name: 'Task2',
             done: true
         },
         {
             id: 3,
-            title: 'Task3',
+            name: 'Task3',
             done: false
         },
         {
             id: 4,
-            title: 'Task4',
+            name: 'Task4',
             done: false
         },
         {
             id: 5,
-            title: 'Task5',
+            name: 'Task5',
             done: false
         },
     ];
+
+    model = new Task('New task', false);
+    submitted = false;
+    active = true;
+
+    onSubmit() {
+        this.submitted = true;
+        this.tasks.push(this.model);
+        this.model = new Task('', false)
+    }
 }

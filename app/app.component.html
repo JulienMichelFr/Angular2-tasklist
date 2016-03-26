@@ -3,7 +3,15 @@
     <ul>
         <li *ngFor="#task of tasks">
             <input [(ngModel)]="task.done" type="checkbox" class="checkbox">
-            <label><span [ngClass]="{finished: task.done}"></span>{{task.title}}</label>
+            <label><span [ngClass]="{finished: task.done}"></span>{{task.name}}</label>
+        </li>
+        <li>
+            <form *ngIf="active" (ngSubmit)="onSubmit()" #taskForm="ngForm">
+                <label for="name">Text</label>
+                <input type="text" required id="name"
+                       [(ngModel)]="model.name">
+                <button type="submit" [disabled]="!taskForm.form.valid">Add</button>
+            </form>
         </li>
     </ul>
 </div>
