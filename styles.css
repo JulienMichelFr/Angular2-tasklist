@@ -40,6 +40,10 @@ span.deletedTask {
   color: lightgrey;
 }
 
+button.white {
+  color: white!important;
+}
+
 /* Checkbox http://codepen.io/Sambego/pen/yiruz */
 .checkbox {
   position: relative;
@@ -97,7 +101,6 @@ span.deletedTask {
 .group {
   position: relative;
   margin-bottom: 45px;
-  margin-left: 35px;
   margin-top: 2em;
 }
 
