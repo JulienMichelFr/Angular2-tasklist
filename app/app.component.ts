@@ -27,19 +27,23 @@ export class AppComponent implements OnInit{
     onSubmit() {
         this.submitted = true;
         this.tasks.push(this.model);
+        this.notFinishedTasks.push(this.model);
         this.model = new Task('', false)
     }
 
     remove(task: Task) {
-        let index = this.tasks.indexOf(task)
-        if (index > -1) {
-            this.tasks.splice(index, 1)
-        }
+        task.removed = true;
+        this.removeFromArray(task, this.finishedTasks);
     }
     
     switch(task: Task) {
-
-        console.log(task);
+        if (task.done) {
+            this.finishedTasks.push(task);
+            this.removeFromArray(task, this.notFinishedTasks);
+        } else {
+            this.notFinishedTasks.push(task);
+            this.removeFromArray(task, this.finishedTasks);
+        }
     }
 
     getTasks() {
@@ -47,12 +51,19 @@ export class AppComponent implements OnInit{
             this.tasks = tasks;
             for (let task of this.tasks) {
                 if (task.done) {
-                    this.finishedTasks.push(task)
+                    this.finishedTasks.push(task);
                 } else {
-                    this.notFinishedTasks.push(task)
+                    this.notFinishedTasks.push(task);
                 }
             }
         });
+    }
+
+    removeFromArray(item, array) {
+        let index = array.indexOf(item);
+        if (index > -1) {
+            array.splice(index, 1);
+        }
     }
 
     ngOnInit() {
