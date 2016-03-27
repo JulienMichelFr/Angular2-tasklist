@@ -2,23 +2,27 @@
 <div>
     <ul>
         <li *ngFor="#task of notFinishedTasks">
-            <input [(ngModel)]="task.done" type="checkbox" class="checkbox" (ngModelChange)="switch(task)">
+            <input [(ngModel)]="task.done" type="checkbox" class="checkbox" (ngModelChange)="changeTaskStatus(task)">
             <label>
                 <span [ngClass]="{finished: task.done}">
                 </span>{{task.name}}
             </label>
-            <i *ngIf="task.done" (click)="remove(task)" class="mdi mdi-delete icon"></i>
         </li>
         <hr *ngIf="(finishedTasks.length > 0 && notFinishedTasks.length > 0)">
         <li *ngFor="#task of finishedTasks">
             <div *ngIf="!task.removed">
-                <input [(ngModel)]="task.done" type="checkbox" class="checkbox" (ngModelChange)="switch(task)">
+                <input [(ngModel)]="task.done" type="checkbox" class="checkbox" (ngModelChange)="changeTaskStatus(task)">
                 <label>
                 <span [ngClass]="{finished: task.done}">
                 </span>{{task.name}}
                 </label>
                 <i *ngIf="task.done" (click)="remove(task)" class="mdi mdi-delete icon"></i>
             </div>
+        </li>
+        <hr>
+        <li *ngFor="#task of deletedTasks">
+            <span class="deletedTask">{{task.name}}</span>
+            <i class="mdi mdi-backup-restore icon" (click)="restore(task)"></i>
         </li>
     </ul>
     <form *ngIf="active" (ngSubmit)="onSubmit()" #taskForm="ngForm">

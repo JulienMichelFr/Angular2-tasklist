@@ -35,6 +35,11 @@ label > span.finished {
   width: 100%;
 }
 
+span.deletedTask {
+  font-style: italic;
+  color: lightgrey;
+}
+
 /* Checkbox http://codepen.io/Sambego/pen/yiruz */
 .checkbox {
   position: relative;
