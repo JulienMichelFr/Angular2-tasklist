@@ -40,13 +40,15 @@ export class AppComponent implements OnInit{
     }
     
     changeTaskStatus(task: Task) {
-        if (task.done) {
-            this.finishedTasks.push(task);
-            this.removeFromArray(task, this.notFinishedTasks);
-        } else {
-            this.notFinishedTasks.push(task);
-            this.removeFromArray(task, this.finishedTasks);
-        }
+        setTimeout(() => {
+            if (task.done) {
+                this.finishedTasks.push(task);
+                this.removeFromArray(task, this.notFinishedTasks);
+            } else {
+                this.notFinishedTasks.push(task);
+                this.removeFromArray(task, this.finishedTasks);
+            }
+        }, 500)
     }
 
     getTasks() {
