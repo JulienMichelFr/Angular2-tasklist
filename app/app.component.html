@@ -2,7 +2,7 @@
 <div>
     <ul>
         <li *ngFor="#task of tasks">
-            <input [(ngModel)]="task.done" type="checkbox" class="checkbox">
+            <input [(ngModel)]="task.done" type="checkbox" class="checkbox" (ngModelChange)="switch(task)">
             <label>
                 <span [ngClass]="{finished: task.done}">
                 </span>{{task.name}}
