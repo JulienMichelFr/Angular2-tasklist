@@ -21,11 +21,13 @@ export class TodolistComponent{
     }
 
     newTodo(): void {
-        this.store.addItem(this.todo);
-        this.todo = '';
+        if (this.todo.length > 0) {
+            this.store.addItem(this.todo);
+            this.todo = '';
+        }
     }
 
-    removeItem(item: TodoModelItem): void {
+    removeItem(item: TodoItem): void {
         this.store.removeItem(item);
     }
 }
