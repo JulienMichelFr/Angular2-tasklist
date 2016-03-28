@@ -1,0 +1,23 @@
+<div class="mdl-grid text-center">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Angular2 Tasklist</h1>
+    </div>
+    <div class="mdl-cell-mdl-cell--12-col">
+        <div class="mdl-textfield mdl-js-textfield">
+            <input [value]="newTask" [(ngModel)]="todo" (keyup.enter)="addTask()"
+                   required class="mdl-textfield__input" type="text" id="task-name">
+            <label class="mdl-textfield__label" for="task-name">Task ...</label>
+        </div>
+        <button (click)="newTodo()"
+                class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Add
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--12-col">
+        <ul>
+            <li *ngFor="#todo of todoList">
+                <label>{{todo.text}}</label>
+            </li>
+        </ul>
+    </div>
+</div>
