@@ -8,7 +8,6 @@ export class TodoStore {
     }
 
     addItem(newItem: String) {
-        console.log(newItem);
         this.items.push({
             text: newItem
         })
