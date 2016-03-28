@@ -1,3 +1,6 @@
+# v2.1.1
+- Fix initialisation
+
 # v2.1.0
 
 - Store data in localstorage

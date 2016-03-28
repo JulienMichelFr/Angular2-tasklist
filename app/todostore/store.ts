@@ -6,6 +6,9 @@ export class TodoStore {
     constructor() {
         try {
             this.items = JSON.parse(localStorage.getItem('todolist'));
+            if (!this.items) {
+                this.items = [];
+            }
         } catch (exception) {
             console.error(exception);
             this.items = [];
