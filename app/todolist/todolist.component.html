@@ -16,7 +16,7 @@
     <div class="mdl-cell mdl-cell--12-col">
         <ul>
             <li *ngFor="#todo of todoList">
-                <todo-item [item]="todo"></todo-item>
+                <todo-item [item]="todo" (done)="removeItem($event)"></todo-item>
             </li>
         </ul>
     </div>

@@ -24,4 +24,8 @@ export class TodolistComponent{
         this.store.addItem(this.todo);
         this.todo = '';
     }
+
+    removeItem(item: TodoModelItem): void {
+        this.store.removeItem(item);
+    }
 }
