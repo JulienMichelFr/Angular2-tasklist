@@ -13,9 +13,16 @@ export default class TodoItemComponent {
     item: TodoItemModel;
 
     @Output()
+    remove = new EventEmitter();
+    
+    @Output()
     done = new EventEmitter();
 
-    doneClicked() {
-        this.done.next(this.item);
+    removeClicked() {
+        this.remove.next(this.item);
+    }
+
+    statusChanged() {
+        this.done.next();
     }
 }

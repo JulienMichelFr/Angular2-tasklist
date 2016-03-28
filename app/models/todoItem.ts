@@ -1,6 +1,7 @@
 export class TodoItem {
 
     _text: String;
+    done: boolean;
 
     get text() {
         return this._text;
@@ -11,6 +12,7 @@ export class TodoItem {
     }
 
     constructor(text: String) {
+        this.done = false;
         this._text = text;
     }
 }

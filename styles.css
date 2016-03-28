@@ -2,3 +2,8 @@
 * { 
   font-family: Roboto, Helvetica, sans-serif;
 }
+
+.float-right {
+  float:right;
+  margin-right:1rem;
+}

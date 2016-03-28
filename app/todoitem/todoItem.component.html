@@ -1,4 +1,4 @@
-<div class="todo">
-    <label>{{item.text}}</label>
-    <i (click)="doneClicked()" class="mdi mdi-delete"></i>
+<div class="todo" [ngClass]="{done: item.done}">
+    <input type="checkbox" [(ngModel)]="item.done" (ngModelChange)="statusChanged()" class="checkbox">
+    <span>{{item.text}}<i (click)="removeClicked()" class="mdi mdi-delete float-right"></i></span>
 </div>

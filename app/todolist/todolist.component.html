@@ -3,15 +3,15 @@
         <h1>Angular2 Tasklist</h1>
     </div>
     <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-textfield mdl-js-textfield max-input">
-            <input [value]="newTask" [(ngModel)]="todo" (keyup.enter)="newTodo()" placeholder="Task ..."
-                   required class="mdl-textfield__input " type="text" id="task-name">
-            <label class="mdl-textfield__label" for="task-name">Task ...</label>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-input">
+            <input [value]="newTask" [(ngModel)]="todo" (keyup.enter)="newTodo()"
+                    class="mdl-textfield__input" type="text">
+            <label class="mdl-textfield__label">What do I need to do ?</label>
         </div>
     </div>
     <div class="mdl-cell mdl-cell--12-col">
         <div class="mdl-shadow--2dp text-center">
-            <todo-item *ngFor="#todo of todoList" [item]="todo" (done)="removeItem($event)"></todo-item>
+            <todo-item *ngFor="#todo of todoList | sort" [item]="todo" (remove)="removeItem($event)" (done)="sortList()"></todo-item>
         </div>
     </div>
 </div>
