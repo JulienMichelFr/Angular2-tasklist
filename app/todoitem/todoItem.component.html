@@ -1,2 +1,4 @@
-<label>{{item.text}}</label>
-<button (click)="doneClicked()"><i class="mdi mdi-delete"></i></button>
+<div class="todo">
+    <label>{{item.text}}</label>
+    <i (click)="doneClicked()" class="mdi mdi-delete"></i>
+</div>

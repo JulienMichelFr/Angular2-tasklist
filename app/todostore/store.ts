@@ -4,13 +4,24 @@ export class TodoStore {
     items: TodoItem[];
 
     constructor() {
-        this.items = [];
+        this.items = [
+            {
+                text: 'Todo1'
+            },
+            {
+                text: 'Todo1'
+            },
+            {
+                text: 'Todo1'
+            },
+            {
+                text: 'Todo1'
+            },
+        ];
     }
 
     addItem(newItem: String) {
-        this.items.push({
-            text: newItem
-        })
+        this.items.push( new TodoItem(newItem))
     }
 
     removeItem(item: TodoItem) {

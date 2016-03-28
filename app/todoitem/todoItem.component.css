@@ -1,0 +1,10 @@
+.todo {
+    width: 100%;
+    font-size:1.3em;
+    padding: 10px 0 10px 0;
+    border: 1px solid rgba(0,0,0,0.3);
+}
+
+.todo > label {
+    margin-left: 10px;
+}

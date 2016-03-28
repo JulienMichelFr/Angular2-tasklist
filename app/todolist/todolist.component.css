@@ -1,3 +1,7 @@
 button {
     color: white!important;
 }
+
+.max-input {
+    width: 100%;
+}
