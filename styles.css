@@ -44,6 +44,10 @@ button.white {
   color: white!important;
 }
 
+.text-center {
+  text-align: center;
+}
+
 /* Checkbox http://codepen.io/Sambego/pen/yiruz */
 .checkbox {
   position: relative;

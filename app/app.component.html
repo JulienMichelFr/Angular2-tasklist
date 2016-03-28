@@ -1,5 +1,7 @@
-<h1>Angular2 Tasklist</h1>
-<div class="mdl-grid">
+<div class="mdl-grid text-center">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h1>Angular2 Tasklist</h1>
+    </div>
     <div class="mdl-cell mdl-cell--4-col">
         <h5>TODO</h5>
         <p *ngFor="#task of notFinishedTasks">
@@ -28,7 +30,7 @@
             <i class="mdi mdi-backup-restore icon" (click)="restore(task)"></i>
         </p>
     </div>
-    <div class="mdl-cell mdl-cell--4-col">
+    <div class="mdl-cell mdl-cell--12-col">
         <form *ngIf="active" (ngSubmit)="onSubmit()" #taskForm="ngForm">
             <div class="group">
                 <input class="material-input-text" type="text" required id="name"
