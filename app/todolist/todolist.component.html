@@ -1,16 +1,12 @@
-<div class="mdl-grid text-center">
+<div class="mdl-grid">
     <div class="mdl-cell mdl-cell--12-col">
-        <h1>Angular2 Tasklist</h1>
+        <h1 class="text-center">Angular2 Todolist</h1>
     </div>
     <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label max-input">
-            <input [value]="newTask" [(ngModel)]="todo" (keyup.enter)="newTodo()"
-                    class="mdl-textfield__input" type="text">
-            <label class="mdl-textfield__label">What do I need to do ?</label>
-        </div>
-    </div>
-    <div class="mdl-cell mdl-cell--12-col">
-        <div class="mdl-shadow--2dp text-center">
+        <div class="mdl-shadow--2dp">
+            <div class="todo">
+                <input class="todo-input" [value]="newTask" [(ngModel)]="todo" (keyup.enter)="newTodo()" id="newTodo" type="text" placeholder="What do I need to do ?">
+            </div>
             <todo-item *ngFor="#todo of todoList | sort" [item]="todo" (remove)="removeItem($event)" (done)="sortList()"></todo-item>
         </div>
     </div>
