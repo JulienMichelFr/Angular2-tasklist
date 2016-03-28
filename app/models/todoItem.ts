@@ -1,18 +1,10 @@
 export class TodoItem {
 
-    _text: String;
+    text: String;
     done: boolean;
-
-    get text() {
-        return this._text;
-    }
-
-    set text(value) {
-        this._text = value;
-    }
 
     constructor(text: String) {
         this.done = false;
-        this._text = text;
+        this.text = text;
     }
 }

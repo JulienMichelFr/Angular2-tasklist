@@ -14,7 +14,7 @@ import Utils from "../utils/utils";
 })
 export class TodolistComponent{
 
-    todo: String = 'New todo';
+    todo: String = '';
     store: TodoStore;
     todoList: TodoItem[];
 

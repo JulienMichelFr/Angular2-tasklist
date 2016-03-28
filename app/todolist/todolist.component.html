@@ -5,7 +5,7 @@
     <div class="mdl-cell mdl-cell--12-col">
         <div class="mdl-shadow--2dp">
             <div class="todo">
-                <input class="todo-input" [value]="newTask" [(ngModel)]="todo" (keyup.enter)="newTodo()" id="newTodo" type="text" placeholder="What do I need to do ?">
+                <input class="todo-input" [value]="newTask" [(ngModel)]="todo" (keyup.enter)="newTodo()" id="newTodo" type="text" placeholder="What do I need to do ?" autofocus>
             </div>
             <todo-item *ngFor="#todo of todoList | sort" [item]="todo" (remove)="removeItem($event)" (done)="sortList()"></todo-item>
         </div>
