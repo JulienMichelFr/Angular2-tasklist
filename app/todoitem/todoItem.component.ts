@@ -23,6 +23,6 @@ export default class TodoItemComponent {
     }
 
     statusChanged() {
-        this.done.next();
+        this.done.next(this.item);
     }
 }
