@@ -1,7 +1,7 @@
 # Angular 2 Tasklist
 
 
-``` npm run start ```
+``` npm install && npm run start ```
 
 Then go to localhost:3000.
 
