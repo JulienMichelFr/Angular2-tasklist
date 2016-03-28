@@ -3,6 +3,7 @@ import {TodoStore} from "../todostore/store";
 import {TodoItem} from "../models/todoItem";
 import TodoItemComponent from "../todoitem/todoItem.component";
 import {ArraySortPipe} from "../pipes/sortTodo.pipe";
+import Utils from "../utils/utils";
 
 @Component({
     selector: 'todolist',
@@ -36,16 +37,6 @@ export class TodolistComponent{
     }
 
     sortList() {
-        this.todoList.sort((a: any, b: any) => {
-            if (a.done && b.done) {
-                return 0;
-            } else if (a.done && !b.done) {
-                return 1;
-            } else if (!a.done && b.done) {
-                return -1;
-            } else if (!a.done && !b.done) {
-                return 0
-            }
-        });
+        Utils.ArraySort(this.todoList);
     }
 }
